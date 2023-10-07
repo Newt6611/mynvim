@@ -3,6 +3,11 @@ require("neo-tree").setup({
     window = {
         position = "right",
         width = 80,
+    },
+    filesystem = {
+        filtered_items = {
+            visible = true, -- Show all hidden file
+        }
     }
 })
 
