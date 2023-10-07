@@ -8,6 +8,15 @@ require("neo-tree").setup({
         filtered_items = {
             visible = true, -- Show all hidden file
         }
+    },
+    event_handlers = {
+        {
+            -- disable auto start neotree when file opened
+            event = "file_opened",
+            handler = function(_)
+                require("neo-tree.command").execute({ action = "close" })
+            end
+        },
     }
 })
 
