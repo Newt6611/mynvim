@@ -23,6 +23,14 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- indent
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function ()
+            require("ibl").setup()
+        end
+    }
+
     -- status line
     use {
         'nvim-lualine/lualine.nvim',
