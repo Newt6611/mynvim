@@ -29,6 +29,9 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
+    -- ufo (for fold lines)
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
     -- telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.3',
