@@ -3,6 +3,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+    -- ai
+    use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+
     -- themes
     use { "catppuccin/nvim", as = "catppuccin" }
 
