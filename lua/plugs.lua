@@ -6,6 +6,14 @@ return require('packer').startup(function(use)
     -- themes
     use { "catppuccin/nvim", as = "catppuccin" }
 
+    -- colorizer
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('colorizer').setup()
+        end
+    }
+
     -- web dev icons
     use ('nvim-tree/nvim-web-devicons')
 
