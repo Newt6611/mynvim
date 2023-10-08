@@ -6,6 +6,9 @@ return require('packer').startup(function(use)
     -- themes
     use { "catppuccin/nvim", as = "catppuccin" }
 
+    -- web dev icons
+    use ('nvim-tree/nvim-web-devicons')
+
     -- treesitter
     use({'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'}})
 
@@ -79,19 +82,19 @@ return require('packer').startup(function(use)
     -- gitsigns
     use('lewis6991/gitsigns.nvim')
 
-    -- 
+    -- trouble
+    use ('folke/trouble.nvim')
+
+    -- fugitive
     use('tpope/vim-fugitive')
-    
+
     -- lazygit
     use({
         "kdheepak/lazygit.nvim",
         requires = {
             "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            require("telescope").load_extension("lazygit")
-        end,
+        }
     })
 
     -- neotree
