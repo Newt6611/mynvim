@@ -99,6 +99,9 @@ return require('packer').startup(function(use)
     -- fugitive
     use('tpope/vim-fugitive')
 
+    -- rbong/vim-flog
+    use('rbong/vim-flog')
+
     -- lazygit
     use({
         "kdheepak/lazygit.nvim",
