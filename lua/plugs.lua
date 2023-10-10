@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
     -- treesitter
     use({'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'}})
 
+    -- treesitter context
+    use('nvim-treesitter/nvim-treesitter-context')
+
     -- todo highlight
     use {
         'folke/todo-comments.nvim',
