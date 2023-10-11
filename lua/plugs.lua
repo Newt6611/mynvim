@@ -12,15 +12,6 @@ return require('packer').startup(function(use)
     -- themes
     use { "catppuccin/nvim", as = "catppuccin" }
 
-    -- pets
-    use({
-        "giusgad/pets.nvim",
-        requires = {
-            "giusgad/hologram.nvim",
-            "MunifTanjim/nui.nvim",
-        }
-    })
-
     -- colorizer
     use {
         'norcalli/nvim-colorizer.lua',
