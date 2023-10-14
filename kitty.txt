@@ -40,9 +40,3 @@ color14 #8be9fd
 color7  #bbbbbb
 color15 #ffffff
 
-qwe
-2
-1q
-e
-q
-
