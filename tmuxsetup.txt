@@ -27,6 +27,7 @@ set -g status-position top
 
 run '~/.tmux/plugins/tpm/tpm'
 
+s
 1
 2
 3
