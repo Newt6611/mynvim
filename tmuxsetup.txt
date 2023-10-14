@@ -29,4 +29,3 @@ run '~/.tmux/plugins/tpm/tpm'
 
 1
 2
-3
