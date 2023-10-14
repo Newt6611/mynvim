@@ -26,3 +26,5 @@ set -g @dracula-fixed-location "Taichung"
 set -g status-position top
 
 run '~/.tmux/plugins/tpm/tpm'
+
+1
