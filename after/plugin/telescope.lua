@@ -9,6 +9,9 @@ end)
 
 require('telescope').setup({
     pickers = {
+        find_files = {
+            theme = "dropdown",
+        },
         buffers = {
             show_all_buffers = true,
             sort_mru = true,
