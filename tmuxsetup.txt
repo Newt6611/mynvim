@@ -27,5 +27,5 @@ set -g status-position top
 
 run '~/.tmux/plugins/tpm/tpm'
 
-asd
+asda
 asd
