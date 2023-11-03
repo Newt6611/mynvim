@@ -1,27 +1,14 @@
 local lsp_zero = require('lsp-zero')
 
-local pid = vim.fn.getpid()
-
-local homepath = "/Users/newt/"
-
--- lsp setup
--- c#
-local omnisharp_bin = homepath .. ".local/share/nvim/mason/bin/omnisharp"
-local csharp_config = {
-  handlers = {
-    ["textDocument/definition"] = require('omnisharp_extended').handler,
-  },
-  cmd = { omnisharp_bin, '--languageserver' , '--hostPID', tostring(pid) },
-}
-require'lspconfig'.omnisharp.setup(csharp_config)
---
-
-
-
-
-lsp_zero.on_attach(function(_, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
-	vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end, opts)
+
+    if client.name == "omnisharp" then
+        vim.keymap.set("n", "<leader>d", function() require('omnisharp_extended').lsp_definitions() end, opts)
+    else
+        vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end, opts)
+    end
+
 	vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.implementation() end, opts)
 
     -- (go to references) use trouble's api makes it better
@@ -43,11 +30,27 @@ end)
 -- mason
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {},
+	ensure_installed = {
+        "omnisharp@v1.39.8"
+    },
 	handlers = {
 		lsp_zero.default_setup,
 	},
 })
+
+local pid = vim.fn.getpid()
+-- lsp setup
+-- c#
+local omnisharp_bin = "/Users/newt/.local/share/nvim/mason/bin/omnisharp"
+local csharp_config = {
+    enable_import_completion = true,
+    handlers = {
+        ["textDocument/definition"] = require('omnisharp_extended').handler,
+    },
+    cmd = { omnisharp_bin, '--languageserver' , '--hostPID', tostring(pid) },
+}
+require'lspconfig'.omnisharp.setup(csharp_config)
+--
 
 -- cmp
 local cmp = require('cmp')
