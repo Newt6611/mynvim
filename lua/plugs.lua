@@ -117,6 +117,9 @@ return require('packer').startup(function(use)
         }
     })
 
+    -- difview
+    use ("sindrets/diffview.nvim")
+
     -- neotree
     use {
         "nvim-neo-tree/neo-tree.nvim",

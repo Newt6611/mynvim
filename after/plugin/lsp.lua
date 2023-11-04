@@ -4,9 +4,9 @@ lsp_zero.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
     if client.name == "omnisharp" then
-        vim.keymap.set("n", "<leader>d", function() require('omnisharp_extended').lsp_definitions() end, opts)
+        vim.keymap.set("n", "gd", function() require('omnisharp_extended').lsp_definitions() end, opts)
     else
-        vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     end
 
 	vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.implementation() end, opts)
