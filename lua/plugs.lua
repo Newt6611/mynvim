@@ -162,4 +162,7 @@ return require('packer').startup(function(use)
     use {
         'numToStr/Comment.nvim',
     }
+
+    -- flash
+    use { "folke/flash.nvim" }
 end)

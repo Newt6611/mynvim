@@ -4,10 +4,6 @@ bind r source-file ~/.tmux.conf
 set -g prefix C-s
 setw -g mouse on
 
-# color
-set -g default-terminal "tmux-256color"
-set -ag terminal-overrides ",xterm-256color:RGB"
-
 # vim motions
 setw -g mode-keys vi
 bind-key h select-pane -L
